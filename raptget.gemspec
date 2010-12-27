@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.authors = ["Joel Bryan Juliano"]
   s.email = %q{joelbryan.juliano@gmail.com}
   s.summary = %q{A gem providing a ruby interface to the apt-get package manager.}
-  s.homepage = %q{}
+  s.homepage = %q{http://github.com/jjuliano/raptget}
   s.description = %q{A gem providing a ruby interface to the apt-get package manager.}
   s.files = [ "README", "Changelog", "MIT-LICENSE", "setup.rb",
               "lib/raptget.rb", "lib/raptget/version.rb", "test/test_raptget.rb",
