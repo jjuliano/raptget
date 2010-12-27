@@ -1,3 +1,17 @@
 README for raptget
 ==================
 
+Raptget is a gem providing a ruby interface to the apt-get package manager.
+
+To install, type 'gem install raptget'
+
+Usage:
+
+  require 'raptget'
+
+  packages = Array.new
+  packages.push('iagno')
+  packages.push('gnome-games')
+
+  aptget = Raptget.new
+  aptget.install(packages)
