@@ -27,25 +27,31 @@
     # can omit any packages to permit APT to deduce a likely solution.
     # Any Package that are specified must completely correct the problem.
     # The option is sometimes necessary when running APT for the first time;
-    # APT itself does not allow broken package dependencies to exist on a system.
-    # It is possible that a system's dependency structure can be so corrupt as to
-    # require manual intervention (which usually means using dselect(8) or
-    # dpkg --remove to eliminate some of the offending packages).
+    # APT itself does not allow broken package dependencies to exist
+    # on a system. It is possible that a system's dependency structure can be
+    # so corrupt as to require manual intervention (which usually means using
+    # dselect or 'remove' to eliminate some of the offending packages).
     # Use of this option together with 'fix_missing' may produce
-    # an error in some situations. Configuration Item: APT::Get::Fix-Broken.
+    # an error in some situations.
+    # Configuration Item: APT::Get::Fix-Broken.
     #
     attr_accessor :fix_broken
 
     #
-    # Ignore missing packages; If packages cannot be retrieved or fail the integrity check
-    # after retrieval (corrupted package files), hold back those packages and handle
-    # the result. Use of this option together with -f may produce an error in some
+    # Ignore missing packages; If packages cannot be retrieved or fail the
+    # integrity check after retrieval (corrupted package files), hold back
+    # those packages and handle the result. Use of this option together
+    # with 'fix_broken' may produce an error in some
     # situations. If a package is selected for installation
     # (particularly if it is mentioned on the command line) and it could not be
     # downloaded then it will be silently held back.
     # Configuration Item: APT::Get::Fix-Missing.
     #
     attr_accessor :fix_missing
+
+    #
+    # Alias to fix_missing
+    #
     attr_accessor :ignore_missing
 
     #
@@ -58,11 +64,12 @@
 
     #
     # Quiet; produces output suitable for logging, omitting progress
-    # indicators. More q's will produce more quiet up to a maximum of 2.
-    # You can also use -q=# to set the quiet level, overriding the configuration
-    # file. Note that quiet level 2 implies -y, you should never use -qq without
-    # a no-action modifier such as -d, --print-uris or -s as APT may decided to
-    # do something you did not expect. Configuration Item: quiet.
+    # indicators. You can also use 'quiet=#' to set the quiet level,
+    # overriding the configuration file. Note that quiet level 2 implies 'yes',
+    # you should never use 'quiet=2' without a no-action modifier
+    # such as 'download_only', 'print_uris' or 'simulate' as APT may decided to
+    # do something you did not expect.
+    # Configuration Item: quiet.
     #
     attr_accessor :quiet
 
@@ -76,9 +83,25 @@
     # brackets meaning breaks that are of no consequence (rare).
     #
     attr_accessor :simulate
+
+    #
+    # Alias to simulate
+    #
     attr_accessor :just_print
+
+    #
+    # Alias to simulate
+    #
     attr_accessor :dry_run
+
+    #
+    # Alias to simulate
+    #
     attr_accessor :recon
+
+    #
+    # Alias to simulate
+    #
     attr_accessor :no_act
 
     #
@@ -89,6 +112,10 @@
     # Configuration Item: APT::Get::Assume-Yes.
     #
     attr_accessor :assume_yes
+
+    #
+    # Alias to assume_yes
+    #
     attr_accessor :yes
 
     #
@@ -109,6 +136,10 @@
     # Configuration Item: APT::Get::Compile.
     #
     attr_accessor :build
+
+    #
+    # Alias to build
+    #
     attr_accessor :compile
 
     #
@@ -142,7 +173,7 @@
     # Force yes; This is a dangerous option that will cause
     # apt to continue without prompting if it is doing something
     # potentially harmful. It should not be used except in very special
-    # situations. Using force-yes can potentially destroy your system!
+    # situations. Using 'force_yes' can potentially destroy your system!
     # Configuration Item: APT::Get::force-yes.
     #
     attr_accessor :force_yes
@@ -175,30 +206,36 @@
     attr_accessor :reinstall
 
     #
-    # This option defaults to on, use --no-list-cleanup to turn it off.
-    # When on apt-get will automatically manage the contents of /var/lib/apt/lists
-    # to ensure that obsolete files are erased.
-    # The only reason to turn it off is if you frequently change your source list.
+    # This option defaults to on, use 'no_list_cleanup' to turn it off.
+    # When on apt-get will automatically manage the contents of
+    # /var/lib/apt/lists to ensure that obsolete files are erased.
+    # The only reason to turn it off is if you frequently change your
+    # source list.
     # Configuration Item: APT::Get::List-Cleanup.
     #
     attr_accessor :list_cleanup
 
     #
     # This option controls the default input to the policy engine,
-    # it creates a default pin at priority 990 using the specified release string.
-    # The preferences file may further override this setting.
-    # In short, this option lets you have simple control over which distribution
-    # packages will be retrieved from. Some common examples might be -t '2.1*' or
-    # -t unstable.
+    # it creates a default pin at priority 990 using the specified
+    # release string. The preferences file may further override this setting.
+    # In short, this option lets you have simple control over which
+    # distribution packages will be retrieved from.
+    # Some common examples might be 'default_release = 2.1*' or
+    # 'default_release = unstable'.
     # Configuration Item: APT::Default-Release;
     #
     attr_accessor :default_release
+
+    #
+    # Alias to default_release
+    #
     attr_accessor :target_release
 
     #
     # Only perform operations that are 'trivial'. Logically this can
-    # be considered related to --assume-yes, where --assume-yes will
-    # answer yes to any prompt, --trivial-only will answer no.
+    # be considered related to 'assume_yes', where 'assume_yes' will
+    # answer yes to any prompt, 'trivial_only' will answer no.
     # Configuration Item: APT::Get::Trivial-Only.
     #
     attr_accessor :trivial_only
@@ -230,11 +267,21 @@
     attr_accessor :only_source
 
     #
-    # Download only the diff or tar file of a source archive.
-    # Configuration Item: APT::Get::Diff-Only and APT::Get::Tar-Only
+    # Download only the tar file of a source archive.
+    # Configuration Item: APT::Get::Tar-Only
     #
     attr_accessor :tar_only
+
+    #
+    # Download only the dsc file of a source archive.
+    # Configuration Item: APT::Get::Dsc-Only
+    #
     attr_accessor :dsc_only
+
+    #
+    # Download only the diff file of a source archive.
+    # Configuration Item: APT::Get::Diff-Only
+    #
     attr_accessor :diff_only
 
     #
@@ -267,12 +314,15 @@
     #
     # Disable sudo. If this is not set, sudo
     # is used.
+    #
     attr_accessor :disable_sudo
 
+    #
     # Returns a new Raptget Object
-
+    #
     def initialize()
     end
+
     #
     # install is followed by one or more packages desired for
     # installation or upgrading. Each package is a package name, not a
@@ -307,7 +357,7 @@
     # newer version is available, it (and its dependencies, as described
     # above) will be downloaded and installed.
     #
-    # Finally, the apt_preferences(5) mechanism allows you to create an
+    # Finally, the apt_preferences mechanism allows you to create an
     # alternative installation policy for individual packages.
     #
     # If no package matches the given expression and the expression
@@ -318,9 +368,7 @@
     # 'lowest'. If this is undesired, anchor the regular expression with
     # a '^' or '$' character, or create a more specific regular
     # expression.
-
-    #	Returns the package names
-
+    #
     def install(packages)
 
       tmp = Tempfile.new('raptget_install')
@@ -353,7 +401,6 @@
     # an upgrade or dist-upgrade. Please be aware that the overall
     # progress meter will be incorrect as the size of the package files
     # cannot be known in advance.
-
     def update
 
       tmp = Tempfile.new('raptget_update')
@@ -386,7 +433,6 @@
     # changing the install status of another package will be left at
     # their current version. An update must be performed first so that
     # apt-get knows that new versions of packages are available.
-
     def upgrade
 
       tmp = Tempfile.new('raptget_upgrade')
@@ -410,12 +456,11 @@
     end
 
     # dselect_upgrade is used in conjunction with the traditional Debian
-    # packaging front-end, dselect(1).  dselect-upgrade follows the
-    # changes made by dselect(1) to the Status field of available
+    # packaging front-end, dselect.  'dselect_upgrade' follows the
+    # changes made by dselect to the Status field of available
     # packages, and performs the actions necessary to realize that state
     # (for instance, the removal of old and the installation of new
     # packages).
-
     def dselect_upgrade
 
       tmp = Tempfile.new('raptget_dselect_upgrade')
@@ -442,12 +487,11 @@
     # also intelligently handles changing dependencies with new versions
     # of packages; apt-get has a "smart" conflict resolution system, and
     # it will attempt to upgrade the most important packages at the
-    # expense of less important ones if necessary. So, dist-upgrade
+    # expense of less important ones if necessary. So, 'dist_upgrade'
     # command may remove some packages. The /etc/apt/sources.list file
     # contains a list of locations from which to retrieve desired package
-    # files. See also apt_preferences(5) for a mechanism for overriding
+    # files. See also apt_preferences for a mechanism for overriding
     # the general settings for individual packages.
-
     def dist_upgrade
 
       tmp = Tempfile.new('raptget_dist_upgrade')
@@ -475,7 +519,6 @@
     # configuration files in system. If a plus sign is appended to the
     # package name (with no intervening space), the identified package
     # will be installed instead of removed.
-
     def remove(packages)
 
       tmp = Tempfile.new('raptget_remove')
@@ -501,7 +544,6 @@
 
     # purge is identical to remove except that packages are removed and
     # purged (any configuration files are deleted too).
-
     def purge(packages)
 
       tmp = Tempfile.new('raptget_purge')
@@ -529,19 +571,19 @@
     # the available packages to decide which source package to fetch. It
     # will then find and download into the current directory the newest
     # available version of that source package while respect the default
-    # release, set with the option APT::Default-Release, the -t option or
-    # per package with the pkg/release syntax, if possible.#
+    # release, set with the option APT::Default-Release, the 'target_release'
+    # option or per package with the pkg/release syntax, if possible.
     #
     # Source packages are tracked separately from binary packages via
-    # deb-src type lines in the sources.list(5) file. This means that you
+    # deb-src type lines in the sources.list file. This means that you
     # will need to add such a line for each repository you want to get
     # sources from. If you don't do this you will properly get another
     # (newer, older or none) source version than the one you have
     # installed or could install.
     #
-    # If the --compile option is specified then the package will be
+    # If the 'compile' option is specified then the package will be
     # compiled to a binary .deb using dpkg-buildpackage, if
-    # --download-only is specified then the source package will not be
+    # 'download_only' is specified then the source package will not be
     # unpacked.
     #
     # A specific source version can be retrieved by postfixing the source
@@ -553,7 +595,6 @@
     # Note that source packages are not tracked like binary packages,
     # they exist only in the current directory and are similar to
     # downloading source tar balls.
-
     def source(packages)
 
       tmp = Tempfile.new('raptget_source')
@@ -577,9 +618,8 @@
 
     end
 
-    # build-dep causes apt-get to install/remove packages in an attempt
+    # 'build_dep' causes apt-get to install/remove packages in an attempt
     # to satisfy the build dependencies for a source package.
-
     def build_dep(packages)
 
       tmp = Tempfile.new('raptget_build_dep')
@@ -606,10 +646,9 @@
     # clean clears out the local repository of retrieved package files.
     # It removes everything but the lock file from
     # /var/cache/apt/archives/ and /var/cache/apt/archives/partial/. When
-    # APT is used as a dselect(1) method, clean is run automatically.
+    # APT is used as a dselect method, clean is run automatically.
     # Those who do not use dselect will likely want to run apt-get clean
     # from time to time to free up disk space.
-
     def clean
 
       command = option_string() + "clean "
@@ -620,7 +659,6 @@
 
     # check is a diagnostic tool; it updates the package cache and checks
     # for broken dependencies.
-
     def check
 
       tmp = Tempfile.new('raptget_check')
@@ -650,7 +688,6 @@
     # growing out of control. The configuration option
     # APT::Clean-Installed will prevent installed packages from being
     # erased if it is set to off.
-
     def autoclean
 
       tmp = Tempfile.new('raptget_autoclean')
@@ -676,7 +713,6 @@
     # autoremove is used to remove packages that were automatically
     # installed to satisfy dependencies for some package and that are no
     # more needed.
-
     def autoremove
 
       tmp = Tempfile.new('raptget_autoremove')
@@ -875,3 +911,4 @@
 
 
   #Dir[File.join(File.dirname(__FILE__), 'raptget/**/*.rb')].sort.each { |lib| require lib }
+
