@@ -1,4 +1,4 @@
-module Raptget #:nodoc:
+module RAptget #:nodoc:
   module VERSION #:nodoc:
     MAJOR = 0
     MINOR = 1
