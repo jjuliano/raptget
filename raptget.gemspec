@@ -1,7 +1,9 @@
+require_relative 'lib/raptget/version'
+
 Gem::Specification.new do |s|
   s.name = %q{raptget}
-  s.version = "0.1.2"
-  s.date = %q{2010-12-28}
+  s.version = Raptget::VERSION::STRING
+  s.date = Time.now
   s.authors = ["Joel Bryan Juliano"]
   s.email = %q{joelbryan.juliano@gmail.com}
   s.summary = %q{A gem providing a ruby interface to the apt-get package manager.}
