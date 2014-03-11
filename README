@@ -8,10 +8,11 @@ To install, type 'gem install raptget'
 Usage:
 
   require 'raptget'
+  include Raptget
 
   packages = Array.new
   packages.push('iagno')
   packages.push('gnome-games')
 
-  aptget = Raptget.new
+  aptget = Aptget.new
   aptget.install(packages)
