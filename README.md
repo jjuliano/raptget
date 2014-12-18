@@ -18,7 +18,7 @@ Sales of RaptGet Pro also benefit the community by ensuring that RaptGet itself 
 #### Licensing
 RaptGet is available under the terms of the GNU LGPLv3 license.
 
-In addition to its useful functionality, buying RaptGet Pro grants your organization a RaptGet Commercial License instead of the GNU LGPL, avoiding any legal issues your lawyers might raise. Please contact joelbryan AT me.com for further detail on licensing including options for embedding RaptGet Pro in your own products.
+In addition to its useful functionality, buying RaptGet Pro grants your organization a RaptGet Commercial License instead of the GNU LGPL, avoiding any legal issues your lawyers might raise. Please contact joelbryan.juliano@gmail.com for further detail on licensing including options for embedding RaptGet Pro in your own products.
 
 #### Buy RaptGet Pro
 Contact me via joelbryan.juliano@gmail.com,
