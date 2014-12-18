@@ -9,7 +9,8 @@ Gem::Specification.new do |s|
   s.summary = %q{A gem providing a ruby interface to the apt-get package manager.}
   s.homepage = %q{http://github.com/jjuliano/raptget}
   s.description = %q{A gem providing a ruby interface to the apt-get package manager.}
-  s.files = [ "README", "Changelog", "MIT-LICENSE", "setup.rb",
+  s.files = [ "README.md", "Changelog", "LICENSE", "setup.rb",
               "lib/raptget.rb", "lib/raptget/version.rb", "test/test_raptget.rb",
               "test/test_helper.rb" ]
+  s.license = "GNU LGPLv3"
 end
