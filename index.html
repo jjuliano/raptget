@@ -1,64 +1,399 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <title>Raptget by jjuliano</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Raptget by jjuliano</title>
   </head>
-
   <body>
-    <div id="container">
-      <div class="inner">
-
-        <header>
-          <h1>Raptget</h1>
-          <h2>A gem providing a ruby interface to the apt-get package manager.</h2>
-        </header>
-
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/jjuliano/raptget/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/jjuliano/raptget/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/jjuliano/raptget" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <h1>
-<a name="readme-for-raptget" class="anchor" href="#readme-for-raptget"><span class="octicon octicon-link"></span></a>README for raptget</h1>
+    <div class="wrapper">
+      <header>
+        <h1>Raptget</h1>
+        <p>A gem providing a ruby interface to the apt-get package manager.</p>
+        <p class="view"><a href="https://github.com/jjuliano/raptget">View the Project on GitHub <small>jjuliano/raptget</small></a></p>
+        <ul>
+          <li><a href="https://github.com/jjuliano/raptget/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jjuliano/raptget/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/jjuliano/raptget">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="raptget---apt-get-package-manager-for-ruby" class="anchor" href="#raptget---apt-get-package-manager-for-ruby" aria-hidden="true"><span class="octicon octicon-link"></span></a>RaptGet - Apt-Get Package Manager for Ruby</h1>
 
 <p>Raptget is a gem providing a ruby interface to the apt-get package manager.</p>
 
 <p>To install, type 'gem install raptget'</p>
 
+<h3>
+<a id="why-raptget" class="anchor" href="#why-raptget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why RaptGet?</h3>
+
+<p>RaptGet creates simple and small development tools that help you design,
+develop, deploy cloud infrastractures for your enterprise software systems.</p>
+
+<h4>
+<a id="raptget-pro-a-commercial-supported-version-of-raptget" class="anchor" href="#raptget-pro-a-commercial-supported-version-of-raptget" aria-hidden="true"><span class="octicon octicon-link"></span></a>RaptGet Pro: A Commercial, Supported Version of RaptGet</h4>
+
+<p>RaptGet Pro is a collection of useful functionality for the open source RaptGet library with priority support via Remote access or Skype from the author, new features in-demand, upgrades and lots more.</p>
+
+<p>Sales of RaptGet Pro also benefit the community by ensuring that RaptGet itself will remain well supported for the foreseeable future.</p>
+
+<h4>
+<a id="licensing" class="anchor" href="#licensing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Licensing</h4>
+
+<p>RaptGet is available under the terms of the GNU LGPLv3 license.</p>
+
+<p>In addition to its useful functionality, buying RaptGet Pro grants your organization a RaptGet Commercial License instead of the GNU LGPL, avoiding any legal issues your lawyers might raise. Please contact <a href="mailto:joelbryan.juliano@gmail.com">joelbryan.juliano@gmail.com</a> for further detail on licensing including options for embedding RaptGet Pro in your own products.</p>
+
+<h4>
+<a id="buy-raptget-pro" class="anchor" href="#buy-raptget-pro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Buy RaptGet Pro</h4>
+
+<p>Contact me via <a href="mailto:joelbryan.juliano@gmail.com">joelbryan.juliano@gmail.com</a>,
+and Pay via Paypal: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=72VVRU869SUB6">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=72VVRU869SUB6</a></p>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
+
 <p>Usage:</p>
 
-<div class="highlight highlight-ruby"><pre>  <span class="nb">require</span> <span class="s1">'raptget'</span>
-  <span class="kp">include</span> <span class="no">Raptget</span>
+<div class="highlight highlight-ruby"><pre>  <span class="pl-k">require</span> <span class="pl-s1"><span class="pl-pds">'</span>raptget<span class="pl-pds">'</span></span>
+  <span class="pl-k">include</span> <span class="pl-vo">Raptget</span>
 
-  <span class="n">packages</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">.</span><span class="n">new</span>
-  <span class="n">packages</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">'iagno'</span><span class="p">)</span>
-  <span class="n">packages</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">'gnome-games'</span><span class="p">)</span>
+  packages <span class="pl-k">=</span> [<span class="pl-s1"><span class="pl-pds">'</span>iagno<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>gnome-games<span class="pl-pds">'</span></span>]
+  aptget <span class="pl-k">=</span> <span class="pl-s3">Aptget</span>.<span class="pl-k">new</span>
+  aptget.download_only <span class="pl-k">=</span> <span class="pl-c1">true</span> <span class="pl-c"># See options</span>
+  aptget.install(packages)</pre></div>
 
-  <span class="n">aptget</span> <span class="o">=</span> <span class="no">Aptget</span><span class="o">.</span><span class="n">new</span>
-  <span class="n">aptget</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">packages</span><span class="p">)</span>
-</pre></div>
-        </section>
+<p>Options:</p>
 
-        <footer>
-          Raptget is maintained by <a href="https://github.com/jjuliano">jjuliano</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+<div class="highlight highlight-ruby"><pre>  aptget <span class="pl-k">=</span> <span class="pl-s3">Aptget</span>.<span class="pl-k">new</span>
 
-        
-      </div>
+  <span class="pl-c"># Download only; package files are only retrieved,</span>
+  <span class="pl-c"># not unpacked or installed.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Download-Only.</span>
+  <span class="pl-c">#</span>
+  aptget.download_only <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Fix; attempt to correct a system with broken dependencies</span>
+  <span class="pl-c"># in place. This option, when used with install/remove,</span>
+  <span class="pl-c"># can omit any packages to permit APT to deduce a likely solution.</span>
+  <span class="pl-c"># Any Package that are specified must completely correct the problem.</span>
+  <span class="pl-c"># The option is sometimes necessary when running APT for the first time;</span>
+  <span class="pl-c"># APT itself does not allow broken package dependencies to exist</span>
+  <span class="pl-c"># on a system. It is possible that a system's dependency structure can be</span>
+  <span class="pl-c"># so corrupt as to require manual intervention (which usually means using</span>
+  <span class="pl-c"># dselect or 'remove' to eliminate some of the offending packages).</span>
+  <span class="pl-c"># Use of this option together with 'fix_missing' may produce</span>
+  <span class="pl-c"># an error in some situations.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Fix-Broken.</span>
+  <span class="pl-c">#</span>
+  aptget.fix_broken <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Ignore missing packages; If packages cannot be retrieved or fail the</span>
+  <span class="pl-c"># integrity check after retrieval (corrupted package files), hold back</span>
+  <span class="pl-c"># those packages and handle the result. Use of this option together</span>
+  <span class="pl-c"># with 'fix_broken' may produce an error in some</span>
+  <span class="pl-c"># situations. If a package is selected for installation</span>
+  <span class="pl-c"># (particularly if it is mentioned on the command line) and it could not be</span>
+  <span class="pl-c"># downloaded then it will be silently held back.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Fix-Missing.</span>
+  <span class="pl-c">#</span>
+  aptget.fix_missing <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Alias to fix_missing</span>
+  <span class="pl-c">#</span>
+  aptget.ignore_missing <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Disables downloading of packages.</span>
+  <span class="pl-c"># This is best used with ignore_missing to force APT</span>
+  <span class="pl-c"># to use only the .debs it has already downloaded.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Download.</span>
+  <span class="pl-c">#</span>
+  aptget.no_download <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Quiet; produces output suitable for logging, omitting progress</span>
+  <span class="pl-c"># indicators. You can also use 'quiet=#' to set the quiet level,</span>
+  <span class="pl-c"># overriding the configuration file. Note that quiet level 2 implies 'yes',</span>
+  <span class="pl-c"># you should never use 'quiet=2' without a no-action modifier</span>
+  <span class="pl-c"># such as 'download_only', 'print_uris' or 'simulate' as APT may decided to</span>
+  <span class="pl-c"># do something you did not expect.</span>
+  <span class="pl-c"># Configuration Item: quiet.</span>
+  <span class="pl-c">#</span>
+  aptget.quiet <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># No action; perform a simulation of events that would occur</span>
+  <span class="pl-c"># but do not actually change the system.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Simulate.</span>
+  <span class="pl-c"># Simulate prints out a series of lines each one representing a</span>
+  <span class="pl-c"># dpkg operation, Configure (Conf), Remove (Remv), Unpack (Inst).</span>
+  <span class="pl-c"># Square brackets indicate broken packages with and empty set of square</span>
+  <span class="pl-c"># brackets meaning breaks that are of no consequence (rare).</span>
+  <span class="pl-c">#</span>
+  aptget.simulate <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Alias to simulate</span>
+  <span class="pl-c">#</span>
+  aptget.just_print <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Alias to simulate</span>
+  <span class="pl-c">#</span>
+  aptget.dry_run <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Alias to simulate</span>
+  <span class="pl-c">#</span>
+  aptget.recon <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Alias to simulate</span>
+  <span class="pl-c">#</span>
+  aptget.no_act <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Automatic yes to prompts; assume "yes" as answer to all</span>
+  <span class="pl-c"># prompts and run non-interactively. If an undesirable situation,</span>
+  <span class="pl-c"># such as changing a held package or removing an essential package</span>
+  <span class="pl-c"># occurs then apt-get will abort.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Assume-Yes.</span>
+  <span class="pl-c">#</span>
+  aptget.assume_yes <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Alias to assume_yes</span>
+  <span class="pl-c">#</span>
+  aptget.yes <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Show upgraded packages; Print out a list of all packages</span>
+  <span class="pl-c"># that are to be upgraded.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Show-Upgraded.</span>
+  <span class="pl-c">#</span>
+  aptget.show_upgraded <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Show full versions for upgraded and installed packages.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Show-Versions.</span>
+  <span class="pl-c">#</span>
+  aptget.verbose_version <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Compile source packages after downloading them.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Compile.</span>
+  <span class="pl-c">#</span>
+  aptget.build <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Alias to build</span>
+  <span class="pl-c">#</span>
+  aptget.compile <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Also install recommended packages.</span>
+  <span class="pl-c">#</span>
+  aptget.install_recommends <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Do not install recommended packages.</span>
+  <span class="pl-c">#</span>
+  aptget.no_install_recommends <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Ignore package Holds; This causes apt-get to ignore a</span>
+  <span class="pl-c"># hold placed on a package.</span>
+  <span class="pl-c"># This may be useful in conjunction with dist-upgrade</span>
+  <span class="pl-c"># to override a large number of undesired holds.</span>
+  <span class="pl-c"># Configuration Item: APT::Ignore-Hold.</span>
+  <span class="pl-c">#</span>
+  aptget.ignore_hold <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Do not upgrade packages; When used in conjunction with</span>
+  <span class="pl-c"># install no-upgrade will prevent packages listed from being</span>
+  <span class="pl-c"># upgraded if they are already installed.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Upgrade.</span>
+  <span class="pl-c">#</span>
+  aptget.no_upgrade <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Force yes; This is a dangerous option that will cause</span>
+  <span class="pl-c"># apt to continue without prompting if it is doing something</span>
+  <span class="pl-c"># potentially harmful. It should not be used except in very special</span>
+  <span class="pl-c"># situations. Using 'force_yes' can potentially destroy your system!</span>
+  <span class="pl-c"># Configuration Item: APT::Get::force-yes.</span>
+  <span class="pl-c">#</span>
+  aptget.force_yes <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Instead of fetching the files to install their URIs are printed.</span>
+  <span class="pl-c"># Each URI will have the path, the destination file name, the size</span>
+  <span class="pl-c"># and the expected md5 hash. Note that the file name to write to will</span>
+  <span class="pl-c"># not always match the file name on the remote site!</span>
+  <span class="pl-c"># This also works with the source and update commands.</span>
+  <span class="pl-c"># When used with the update command the MD5 and size are not included,</span>
+  <span class="pl-c"># and it is up to the user to decompress any compressed files.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Print-URIs.</span>
+  <span class="pl-c">#</span>
+  aptget.print_uris <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Use purge instead of remove for anything that would be removed.</span>
+  <span class="pl-c"># An asterisk ("*") will be displayed next to packages which are</span>
+  <span class="pl-c"># scheduled to be purged.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Purge.</span>
+  <span class="pl-c">#</span>
+  aptget.purge <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Re-Install packages that are already installed and at the</span>
+  <span class="pl-c"># newest version.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::ReInstall.</span>
+  <span class="pl-c">#</span>
+  aptget.reinstall <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># This option defaults to on, use 'no_list_cleanup' to turn it off.</span>
+  <span class="pl-c"># When on apt-get will automatically manage the contents of</span>
+  <span class="pl-c"># /var/lib/apt/lists to ensure that obsolete files are erased.</span>
+  <span class="pl-c"># The only reason to turn it off is if you frequently change your</span>
+  <span class="pl-c"># source list.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::List-Cleanup.</span>
+  <span class="pl-c">#</span>
+  aptget.list_cleanup <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># This option controls the default input to the policy engine,</span>
+  <span class="pl-c"># it creates a default pin at priority 990 using the specified</span>
+  <span class="pl-c"># release string. The preferences file may further override this setting.</span>
+  <span class="pl-c"># In short, this option lets you have simple control over which</span>
+  <span class="pl-c"># distribution packages will be retrieved from.</span>
+  <span class="pl-c"># Some common examples might be 'default_release = 2.1*' or</span>
+  <span class="pl-c"># 'default_release = unstable'.</span>
+  <span class="pl-c"># Configuration Item: APT::Default-Release;</span>
+  <span class="pl-c">#</span>
+  aptget.default_release <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Alias to default_release</span>
+  <span class="pl-c">#</span>
+  aptget.target_release <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Only perform operations that are 'trivial'. Logically this can</span>
+  <span class="pl-c"># be considered related to 'assume_yes', where 'assume_yes' will</span>
+  <span class="pl-c"># answer yes to any prompt, 'trivial_only' will answer no.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Trivial-Only.</span>
+  <span class="pl-c">#</span>
+  aptget.trivial_only <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># If any packages are to be removed apt-get immediately aborts</span>
+  <span class="pl-c"># without prompting.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Remove</span>
+  <span class="pl-c">#</span>
+  aptget.no_remove <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># If the command is either install or remove, then this option acts</span>
+  <span class="pl-c"># like running autoremove command, removing the unused dependency</span>
+  <span class="pl-c"># packages.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::AutomaticRemove.</span>
+  <span class="pl-c">#</span>
+  aptget.auto_remove <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Only has meaning for the source command.</span>
+  <span class="pl-c"># Indicates that the given source names are not to be mapped</span>
+  <span class="pl-c"># through the binary table. This means that if this option is specified,</span>
+  <span class="pl-c"># the source command will only accept source package names as arguments,</span>
+  <span class="pl-c"># rather than accepting binary package names and looking up the</span>
+  <span class="pl-c"># corresponding source package.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Only-Source</span>
+  <span class="pl-c">#</span>
+  aptget.only_source <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Download only the tar file of a source archive.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Tar-Only</span>
+  <span class="pl-c">#</span>
+  aptget.tar_only <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Download only the dsc file of a source archive.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Dsc-Only</span>
+  <span class="pl-c">#</span>
+  aptget.dsc_only <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Download only the diff file of a source archive.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Diff-Only</span>
+  <span class="pl-c">#</span>
+  aptget.diff_only <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Ignore if packages can't be authenticated and don't prompt about</span>
+  <span class="pl-c"># it. This is useful for tools like pbuilder.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::AllowUnauthenticated.</span>
+  <span class="pl-c">#</span>
+  aptget.allow_unauthenticated <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Only process architecture-dependent build-dependencies.</span>
+  <span class="pl-c"># Configuration Item: APT::Get::Arch-Only</span>
+  <span class="pl-c">#</span>
+  aptget.arch_only <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Configuration File; Specify a configuration file to use.</span>
+  <span class="pl-c"># The program will read the default configuration file and</span>
+  <span class="pl-c"># then this configuration file.</span>
+  <span class="pl-c">#</span>
+  aptget.config_file <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Set a Configuration Option; This will set an arbitrary</span>
+  <span class="pl-c"># configuration option.</span>
+  <span class="pl-c"># The syntax is raptget.option = "Foo::Bar=bar"</span>
+  <span class="pl-c">#</span>
+  aptget.option <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  <span class="pl-c">#</span>
+  <span class="pl-c"># Disable sudo. If this is not set, sudo</span>
+  <span class="pl-c"># is used.</span>
+  <span class="pl-c">#</span>
+  aptget.disable_sudo <span class="pl-k">=</span> <span class="pl-c1">true</span>
+
+  aptget.install(packages)</pre></div>
+
+<h3>
+<a id="donations" class="anchor" href="#donations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donations</h3>
+
+<p>Please support independent cloud computing toolkits, also money donated to the project will benefit the community by ensuring
+that RaptGet itself will remain well supported for the foreseeable future.
+To Donate, please visit: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=KT9CY4T7BYDM4">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=KT9CY4T7BYDM4</a></p>
+      </section>
     </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/jjuliano">jjuliano</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
