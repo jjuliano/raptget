@@ -2,8 +2,8 @@
   #
   # Homepage::  http://github.com/jjuliano/raptget
   # Author::    Joel Bryan Juliano
-  # Copyright:: (cc) 2011 Joel Bryan Juliano
-  # License::   MIT
+  # Copyright:: (cc) 2011-2015 Joel Bryan Juliano
+  # License::   GNU LGPLv3
   #
   # class Raptget::Package.new( array, str, array)
 
